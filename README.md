@@ -14,14 +14,14 @@ Al clonar el repositorio debemos de seguir una serie de pasos para nuestro proye
 - php artisan migrate
 - php artisan storage:link
 
-## Env config
+## Env config ⚙️🪬
 El archivo env tiene que ir con ciertas configuraciones
 - Tener la bases de datos y la contraena
 - En la parte de paswrod es autogenerada por google en seccion se gestionar/ seguridad
 - MAIL_HOST=smtp.gmail.com
 - MAIL_PORT=465
-- MAIL_USERNAME=gabrielasimbaya82@gmail.com
-- MAIL_PASSWORD=hjfdgbwuisiqurad
+- MAIL_USERNAME=tuCorreo@gmail.com
+- MAIL_PASSWORD=hjfdgbwuisi234242
 - MAIL_ENCRYPTION=ssl
 - MAIL_FROM_ADDRESS="hello@example.com"
 - MAIL_FROM_NAME="${APP_NAME}"
