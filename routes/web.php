@@ -36,5 +36,5 @@ Route::middleware([
 ])->group(function () {
     Route::resource('product', ProductController::class);
     Route::resource('buyer', BuyerController::class);
-    //Route::post('/invoice/complete/{invoce}', [InvoceController::class, 'completeSend'])->name('invoce.complete');
+    Route::post('buyer/{buyer}/', [BuyerController::class, 'completeSend'])->name('buyer.complete');
 });

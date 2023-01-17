@@ -7,6 +7,25 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Dependencies Project 🧩🪬
+Al clonar el repositorio debemos de seguir una serie de pasos para nuestro proyecto
+- composer install
+- npm install && npm run dev
+- php artisan migrate
+- php artisan storage:link
+
+## Env config
+El archivo env tiene que ir con ciertas configuraciones
+- Tener la bases de datos y la contraena
+- En la parte de paswrod es autogenerada por google en seccion se gestionar/ seguridad
+- MAIL_HOST=smtp.gmail.com
+- MAIL_PORT=465
+- MAIL_USERNAME=gabrielasimbaya82@gmail.com
+- MAIL_PASSWORD=hjfdgbwuisiqurad
+- MAIL_ENCRYPTION=ssl
+- MAIL_FROM_ADDRESS="hello@example.com"
+- MAIL_FROM_NAME="${APP_NAME}"
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

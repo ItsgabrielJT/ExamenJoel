@@ -59,6 +59,17 @@
                                 </td>
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">
+
+                                    <div
+                                        class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                        <form method="POST" action="{{ route('buyer.complete', ['buyer'=> $byr->id]) }}">
+                                            @csrf
+                                            <a href="{{ route('buyer.complete', ['buyer'=> $byr->id]) }}" onclick="event.preventDefault();
+                                                            this.closest('form').submit();">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M4.4 19.425q-.5.2-.95-.088Q3 19.05 3 18.5v-3.725q0-.35.2-.625t.55-.35L11 12l-7.25-1.8q-.35-.075-.55-.35q-.2-.275-.2-.625V5.5q0-.55.45-.838q.45-.287.95-.087l15.4 6.5q.625.275.625.925t-.625.925Z"/></svg>
+                                            </a>
+                                        </form>
+                                    </div>
                                                                                 
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <form method="POST" action="{{ route('buyer.destroy', ['buyer' => $byr->id]) }}"

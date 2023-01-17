@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BuyerStoreRequest;
+use App\Mail\BuyerMail;
 use App\Models\Buyer;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class BuyerController extends Controller
 {
@@ -29,6 +31,17 @@ class BuyerController extends Controller
     {
         $buyer = new Buyer();
         return view('buyers.create', compact('buyer'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Buyer  $buyer
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Buyer $buyer)
+    {
+        //
     }
 
     /**
@@ -58,6 +71,18 @@ class BuyerController extends Controller
         } catch(Exception $e) {
             $result = ['status'=>'Success', 'color' => 'red','message'=>'Buyer cannot be delete'];
         } 
+        return redirect()->route('buyer.index')->with($result);
+    }
+
+    public function completeSend(Request $request, Buyer $buyer) {        
+        try {
+            Mail::to($buyer->email)
+                ->queue(new BuyerMail());
+            $result = ['status' => 'success', 'color' => 'green', 'message' => 'Mail sent successfully'];
+        } catch (\Exception $e) {
+            $result = ['status' => 'success', 'color' => 'red', 'message' => $e->getMessage()];
+        }
+
         return redirect()->route('buyer.index')->with($result);
     }
 }
